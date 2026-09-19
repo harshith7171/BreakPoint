@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased font-sans overflow-hidden;
+    margin: 0;
+  }
+}
+
+/* Custom pulse animations for cascade failure */
+@keyframes pulse-red {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6), inset 0 0 10px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.9), inset 0 0 18px rgba(239, 68, 68, 0.5);
+  }
+}
+
+@keyframes pulse-orange {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.5), inset 0 0 8px rgba(249, 115, 22, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(249, 115, 22, 0.8), inset 0 0 15px rgba(249, 115, 22, 0.4);
+  }
+}
+
+@keyframes pulse-yellow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(234, 179, 8, 0.7);
+  }
+}
+
+@keyframes pulse-blue {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(59, 130, 246, 0.8);
+  }
+}
+
+.node-pulse-failed {
+  animation: pulse-red 1.5s infinite ease-in-out;
+}
+
+.node-pulse-cascaded {
+  animation: pulse-orange 2s infinite ease-in-out;
+}
+
+.node-pulse-degraded {
+  animation: pulse-yellow 2.5s infinite ease-in-out;
+}
+
+.node-pulse-recovering {
+  animation: pulse-blue 1.5s infinite ease-in-out;
+}
+
+/* React Flow background grid dark styling */
+.react-flow__background {
+  background-color: #030712 !important;
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  border: 2px solid #38bdf8 !important;
+  background-color: #0f172a !important;
+}
+
+.react-flow__controls button {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  fill: #94a3b8 !important;
+  color: #94a3b8 !important;
+}
+
+.react-flow__controls button:hover {
+  background-color: #334155 !important;
+  fill: #f8fafc !important;
+  color: #f8fafc !important;
+}
